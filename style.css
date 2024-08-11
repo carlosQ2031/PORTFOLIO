@@ -1,0 +1,250 @@
+/* Reset de márgenes y padding para todo el documento */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("img/img-7rDiwQZwQJsHRi42X7P6t.jpeg");
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.contenedor-web {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Alinea los elementos al centro */
+    gap: 50px; /* Espacio entre los elementos */
+}
+
+.menu {
+    padding: 10px 20px; /* Ajusta el padding para evitar que los íconos sobresalgan */
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: space-between; /* Espacio entre el logo, el menú y las redes sociales */
+    width: 100%;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.menu-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    width: 33%;
+    font-size: 20px;
+}
+
+.menu-nav li {
+    margin: 0 10px; /* Espacio entre los elementos del menú */
+    position: relative;
+}
+
+.menu-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding-bottom: 5px;
+    position: relative;
+    
+}
+
+.menu-nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+
+.menu-nav a:hover::after {
+    width: 100%;
+}
+
+.logo-menu {
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    width: 33%;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    text-align: center; /* Asegura que el texto esté centrado */
+}
+
+
+.menu-redes_sociales {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+    gap: 20px;
+}
+
+.menu-redes_sociales li {
+    margin: 0; /* Ajusta el margen para evitar que sobresalga */
+}
+
+.menu-redes_sociales img {
+    width: 40px; /* Ajusta el tamaño según sea necesario */
+    height: auto; /* Mantiene la proporción */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.menu-redes_sociales img:hover {
+    transform: scale(1.2); /* Aumenta el tamaño del ícono al pasar el ratón */
+    filter: brightness(1.2); /* Aumenta el brillo del ícono al pasar el ratón */
+}
+
+.presentacion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    justify-items: center;
+    grid-template-areas:
+        "presentacion-titulo presentacion-img"
+        "presentacion-nombre presentacion-img"
+        "presentacion-descripcion presentacion-img"
+        "botones presentacion-img";
+    grid-row-gap: 0px;
+    overflow: hidden;
+}
+
+/* Tipeo */
+.presentacion-titulo {
+    grid-area: presentacion-titulo;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.presentacion-titulo span {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    font-size: 60px;
+    border-right: 2px solid rgba(255, 255, 255, 0); /* Cursor de tipeo */
+}
+
+.presentacion-titulo span:nth-child(1) {
+    color: white;
+    animation: typing1 2s linear forwards, blink-caret 0.75s step-end infinite;
+}
+
+.presentacion-titulo span:nth-child(2) {
+    color: rgb(255, 64, 64);
+    animation: typing2 1.5s linear forwards, blink-caret 0.75s step-end infinite;
+    animation-delay: 1.5s; /* Retardo para que empiece después del primero */
+}
+
+/* Animaciones de tipeo */
+@keyframes typing1 {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes typing2 {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/**/
+
+
+.presentacion-nombre {    
+    grid-area: presentacion-nombre;
+    width: 80%;
+    color: white;
+    box-sizing: border-box;
+    display: flex; /* Habilita el uso de flexbox */
+    justify-content: start; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+}
+
+.nombre {
+    display: inline-block; /* Ajusta el tamaño del contenedor al contenido */
+    width: auto; /* Ajusta el ancho automáticamente */
+    padding: 5px; /* Agrega un padding si es necesario */
+    background-color: rgba(245, 245, 220, 0.287); /* Mantén el fondo transparente */
+    border-radius: 10px;
+}
+
+
+.presentacion-descripcion {
+    grid-area: presentacion-descripcion;
+    color: white;
+    width: 80%;
+    text-align: justify;
+    font-size: 15px;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+.presentacion-img {
+    grid-area: presentacion-img;
+    width: 250px; /* Ajusta el tamaño según sea necesario */
+    height: 300px; /* Ajusta el tamaño según sea necesario */
+    object-fit: cover; /* Mantiene la proporción de la imagen y recorta si es necesario */
+    border-radius: 50%; /* Aplica el borde redondeado para crear una forma ovalada */
+    justify-self: center; /* Centra horizontalmente la imagen en su celda de cuadrícula */
+    align-self: center; /* Centra verticalmente la imagen en su celda de cuadrícula */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Agrega una sombra suave para mejorar el desvanecimiento de los bordes */
+}
+
+.botones {
+    grid-area: botones;
+    display: flex;
+    width: 80%;
+    height: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.botones a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 5px;
+    color: white;
+}
+
+.boton-resumen {
+    background-color: rgb(255, 64, 64);
+    height: 40px;
+    width: 200px;
+    color:rgb(255, 255, 255);
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton-contacto {
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 64, 64) !important;
+    height: 40px;
+    width: 200px;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
